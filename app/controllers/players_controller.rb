@@ -8,9 +8,6 @@ class PlayersController < ApplicationController
     conf.columns[:rbi].label = "RBI"
     conf.columns[:sb].label = "SB"
     conf.columns[:ops].label = "OPS"
-  end
-
-  def show
-  	@player = Player.find params[:id]
+    conf.action_links.add 'index', :label => 'Import',  :page => true, :controller => "import"
   end
 end
